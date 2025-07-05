@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, sans-serif;
+  font-family: 'Ubuntu', 'Montserrat', system-ui, sans-serif;
   line-height: 1.2;
   font-weight: 400;
 
@@ -21,15 +21,18 @@
 h1 {
   font-size: 36px;
   font-weight: 900;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 h3 {
   font-size: 28px;
   font-weight: 900;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 p {
   font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p.bold {
