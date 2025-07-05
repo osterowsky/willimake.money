@@ -7,6 +7,10 @@
     padding: 1rem;
 }
 
-#logo, .nav {
+#logo {
     color: #F138BA;
+}
+
+.nav {
+    color: #DA71C5; /* Lighter shade for navigation links */
 }

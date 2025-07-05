@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Ubuntu', 'Montserrat', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   line-height: 1.2;
   font-weight: 400;
 
@@ -37,10 +37,12 @@ p {
 
 p.bold {
   font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p.small {
   font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -52,4 +54,9 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;  /* Remove underline on hover/focus too */
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
