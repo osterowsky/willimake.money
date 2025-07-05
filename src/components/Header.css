@@ -7,10 +7,6 @@
     padding: 1rem;
 }
 
-#logo {
+#logo, .nav {
     color: #F138BA;
-}
-
-.nav {
-    color: #DA71C5;
 }
