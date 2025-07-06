@@ -3,14 +3,13 @@ import '../index.css'
 import { useState } from "react";
 
 export default function Home() {
-  const [stake, setStake] = useState(0);
-  const [yourOdds, setYourOdds] = useState(0);
-  const [oppositeOdds, setOppositeOdds] = useState(0);
+const [stake, setStake] = useState<number | "">("");
+const [yourOdds, setYourOdds] = useState<number | "">("");
+const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
 
   // Compute dynamically based on inputs
   let expectedValue = 0;
   let yourProfit = 0;
-  let bookmakerProfit = 0;
 
   const allInputsFilled = stake && yourOdds && oppositeOdds;
 
