@@ -10,6 +10,7 @@ const [oppositeOdds, setOppositeOdds] = useState<string>("");
   // Compute dynamically based on inputs
   let expectedValue = 0;
   let yourProfit = 0;
+  let bookmakerMargin = 0;
 
   const allInputsFilled = stake && yourOdds && oppositeOdds;
 
@@ -23,6 +24,12 @@ const [oppositeOdds, setOppositeOdds] = useState<string>("");
     let yourProbability = 1.0 / yourOddsNum;
     let oppositeProbability = 1.0 / oppositeOddsNum;
     let totalProbability = yourProbability + oppositeProbability;
+
+    // Calculate bookmaker margin
+    // Bookmaker Margin = 1 - (total probability in bookmaker's odds) * 100
+    bookmakerMargin = (totalProbability - 1) * 100;
+    console.log("Bookmaker Margin:", bookmakerMargin);
+    console.log("Your Probability:", totalProbability);
 
     // Calculate expected value
     // EV = Total Win * (Your Probability / Total Probability)
@@ -56,6 +63,10 @@ const [oppositeOdds, setOppositeOdds] = useState<string>("");
             <p className="label">Your profit</p>
             <p className="small">
                 {allInputsFilled && yourProfit != 0 ? yourProfit.toFixed(2) : "0.00"} $
+            </p>
+            <p className="label">Bookmaker margin</p>
+            <p className="small">
+                {allInputsFilled && bookmakerMargin != 0 ? bookmakerMargin.toFixed(2) : "0.00"} %
             </p>
         </div>
     </div>
