@@ -22,7 +22,7 @@ const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
 
     // Calculate expected value
     // EV = Total Win * (Your Probability / Total Probability)
-    expectedValue = totalWin * (yourProbability/totalProbability)
+    expectedValue = totalWin * (yourProbability / totalProbability);
 
     // Calculate profits
     // Your Profit = Expected Value - Stake
@@ -36,9 +36,9 @@ const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
             <p className="label">Stake</p>
             <input type="number" placeholder="100" step="0.01" className="small-text" value={stake} onChange={(e) => setStake(parseFloat(e.target.value) || 0)}/>
             <p className="label">Your Odds</p>
-            <input type="number" placeholder="1.75" step="0.01" className="small-text" value={yourOdds} onChange={(e) => setYourOdds(parseFloat(e.target.value) || 0)}/>
+            <input type="number" placeholder="1,75" step="0.01" className="small-text" value={yourOdds} onChange={(e) => setYourOdds(parseFloat(e.target.value) || 0)}/>
             <p className="label">Opposite Odds</p>
-            <input type="number" placeholder="2.0" step="0.01" className="small-text" value={oppositeOdds} onChange={(e) => setOppositeOdds(parseFloat(e.target.value) || 0)}/>
+            <input type="number" placeholder="2,0" step="0.01" className="small-text" value={oppositeOdds} onChange={(e) => setOppositeOdds(parseFloat(e.target.value) || 0)}/>
         </div>
 
         <div className="divider"></div>
@@ -47,11 +47,11 @@ const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
             <h3>Summary</h3>
             <p className="label">Expected Value</p>
             <p className="small">
-                {allInputsFilled && expectedValue != 0 ? expectedValue.toFixed(2) : "0.00 $"}
+                {allInputsFilled && expectedValue != 0 ? expectedValue.toFixed(2) : "0.00"} $
             </p>
             <p className="label">Your profit</p>
             <p className="small">
-                {allInputsFilled && yourProfit != 0 ? yourProfit.toFixed(2) : "0.00 $"}
+                {allInputsFilled && yourProfit != 0 ? yourProfit.toFixed(2) : "0.00"} $
             </p>
         </div>
     </div>
