@@ -3,9 +3,9 @@ import '../index.css'
 import { useState } from "react";
 
 export default function Home() {
-const [stake, setStake] = useState<string>("");
-const [yourOdds, setYourOdds] = useState<string>("");
-const [oppositeOdds, setOppositeOdds] = useState<string>("");
+  const [stake, setStake] = useState<string>("");
+  const [yourOdds, setYourOdds] = useState<string>("");
+  const [oppositeOdds, setOppositeOdds] = useState<string>("");
 
   // Compute dynamically based on inputs
   let expectedValue = 0;
@@ -40,6 +40,12 @@ const [oppositeOdds, setOppositeOdds] = useState<string>("");
     yourProfit = expectedValue - stakeNum;
   }
 
+  function getSummaryColor() {
+    if (yourProfit > 0) return "#21C457"; // green
+    if (yourProfit < 0) return "#C42121"; // red
+    return undefined;
+  }
+
   return (
     <div id="home">
         <div className="column">
@@ -54,18 +60,18 @@ const [oppositeOdds, setOppositeOdds] = useState<string>("");
 
         <div className="divider"></div>
 
-        <div className="column">
+        <div className="column" id="summary">
             <h3>Summary</h3>
-            <p className="label">Expected Value</p>
-            <p className="small">
+            <p className="label" style={{ color: getSummaryColor() }}>Expected Value</p>
+            <p className="small" style={{ color: getSummaryColor() }}>
                 {allInputsFilled && expectedValue != 0 ? expectedValue.toFixed(2) : "0.00"} $
             </p>
-            <p className="label">Your profit</p>
-            <p className="small">
+            <p className="label" style={{ color: getSummaryColor() }}>Your profit</p>
+            <p className="small" style={{ color: getSummaryColor() }}>
                 {allInputsFilled && yourProfit != 0 ? yourProfit.toFixed(2) : "0.00"} $
             </p>
-            <p className="label">Bookmaker margin</p>
-            <p className="small">
+            <p className="label" style={{ color: getSummaryColor() }}>Bookmaker margin</p>
+            <p className="small" style={{ color: getSummaryColor() }}>
                 {allInputsFilled && bookmakerMargin != 0 ? bookmakerMargin.toFixed(2) : "0.00"} %
             </p>
         </div>
