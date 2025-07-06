@@ -35,12 +35,12 @@ p {
   font-family: 'Montserrat', sans-serif;
 }
 
-p.bold {
+p.bold, .bold-text {
   font-weight: 900;
   font-family: 'Montserrat', sans-serif;
 }
 
-p.small {
+p.small, .small-text {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
 }
