@@ -3,9 +3,9 @@ import '../index.css'
 import { useState } from "react";
 
 export default function Home() {
-const [stake, setStake] = useState<number | "">("");
-const [yourOdds, setYourOdds] = useState<number | "">("");
-const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
+const [stake, setStake] = useState<string>("");
+const [yourOdds, setYourOdds] = useState<string>("");
+const [oppositeOdds, setOppositeOdds] = useState<string>("");
 
   // Compute dynamically based on inputs
   let expectedValue = 0;
@@ -14,10 +14,14 @@ const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
   const allInputsFilled = stake && yourOdds && oppositeOdds;
 
   if (allInputsFilled) {
+    const stakeNum = parseFloat(stake);
+    const yourOddsNum = parseFloat(yourOdds);
+    const oppositeOddsNum = parseFloat(oppositeOdds);
+
     // Perform calculations
-    let totalWin = stake * yourOdds;
-    let yourProbability = 1.0 / yourOdds;
-    let oppositeProbability = 1.0 / oppositeOdds;
+    let totalWin = stakeNum * yourOddsNum;
+    let yourProbability = 1.0 / yourOddsNum;
+    let oppositeProbability = 1.0 / oppositeOddsNum;
     let totalProbability = yourProbability + oppositeProbability;
 
     // Calculate expected value
@@ -26,7 +30,7 @@ const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
 
     // Calculate profits
     // Your Profit = Expected Value - Stake
-    yourProfit = expectedValue - stake;
+    yourProfit = expectedValue - stakeNum;
   }
 
   return (
@@ -34,11 +38,11 @@ const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
         <div className="column">
             <h3>Calculate</h3>
             <p className="label">Stake</p>
-            <input type="number" placeholder="100" step="0.01" className="small-text" value={stake} onChange={(e) => setStake(parseFloat(e.target.value))}/>
+            <input type="number" placeholder="100" step="0.01" className="small-text" value={stake} onChange={(e) => setStake(e.target.value)}/>
             <p className="label">Your Odds</p>
-            <input type="number" placeholder="1.75" step="0.01" className="small-text" value={yourOdds} onChange={(e) => setYourOdds(parseFloat(e.target.value))}/>
+            <input type="number" placeholder="1.75" step="0.01" className="small-text" value={yourOdds} onChange={(e) => setYourOdds(e.target.value)}/>
             <p className="label">Opposite Odds</p>
-            <input type="number" placeholder="2.0" step="0.01" className="small-text" value={oppositeOdds} onChange={(e) => setOppositeOdds(parseFloat(e.target.value))}/>
+            <input type="number" placeholder="2.0" step="0.01" className="small-text" value={oppositeOdds} onChange={(e) => setOppositeOdds(e.target.value)}/>
         </div>
 
         <div className="divider"></div>
