@@ -34,11 +34,11 @@ const [oppositeOdds, setOppositeOdds] = useState<number | "">("");
         <div className="column">
             <h3>Calculate</h3>
             <p className="label">Stake</p>
-            <input type="number" placeholder="100" step="0.01" className="small-text" value={stake} onChange={(e) => setStake(parseFloat(e.target.value) || 0)}/>
+            <input type="number" placeholder="100" step="0.01" className="small-text" value={stake} onChange={(e) => setStake(parseFloat(e.target.value))}/>
             <p className="label">Your Odds</p>
-            <input type="number" placeholder="1,75" step="0.01" className="small-text" value={yourOdds} onChange={(e) => setYourOdds(parseFloat(e.target.value) || 0)}/>
+            <input type="number" placeholder="1.75" step="0.01" className="small-text" value={yourOdds} onChange={(e) => setYourOdds(parseFloat(e.target.value))}/>
             <p className="label">Opposite Odds</p>
-            <input type="number" placeholder="2,0" step="0.01" className="small-text" value={oppositeOdds} onChange={(e) => setOppositeOdds(parseFloat(e.target.value) || 0)}/>
+            <input type="number" placeholder="2.0" step="0.01" className="small-text" value={oppositeOdds} onChange={(e) => setOppositeOdds(parseFloat(e.target.value))}/>
         </div>
 
         <div className="divider"></div>
