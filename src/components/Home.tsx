@@ -6,11 +6,11 @@ export default function Home() {
     <div id="home">
         <div className="column">
             <h3>Calculate</h3>
-            <p>Stake</p>
+            <p className="label">Stake</p>
             <input type="number" placeholder="100" step="0.01" className="small-text"/>
-            <p>Your Odds</p>
+            <p className="label">Your Odds</p>
             <input type="number" placeholder="1.75" step="0.01" className="small-text"/>
-            <p>Opposite Odds</p>
+            <p className="label">Opposite Odds</p>
             <input type="number" placeholder="2.0" step="0.01" className="small-text"/>
         </div>
 
